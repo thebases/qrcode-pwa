@@ -1,0 +1,13 @@
+<svg width="359" height="283" viewBox="0 0 359 283" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<path d="M66.2739 7H10.2739C5.85565 7 2.27393 10.5817 2.27393 15V71" stroke="white" stroke-width="3" style="mix-blend-mode:difference"/>
+<path d="M357.105 71L357.105 15C357.105 10.5817 353.523 7 349.105 7L293.105 7" stroke="white" stroke-width="3" style="mix-blend-mode:difference"/>
+<path d="M357.105 201.453L357.105 257.453C357.105 261.871 353.523 265.453 349.105 265.453L293.105 265.453" stroke="white" stroke-width="3" style="mix-blend-mode:difference"/>
+<path d="M2.27393 201.453L2.27393 257.453C2.27393 261.871 5.85565 265.453 10.2739 265.453L66.2739 265.453" stroke="white" stroke-width="3" style="mix-blend-mode:difference"/>
+<path d="M357.379 0H2V282.455H357.379V0Z" fill="url(#pattern0_1145_44368)" fill-opacity="0.5"/>
+<defs>
+<pattern id="pattern0_1145_44368" patternContentUnits="objectBoundingBox" width="0.0714843" height="0.088708">
+<use xlink:href="#image0_1145_44368" transform="scale(0.000979237 0.00123206)"/>
+</pattern>
+<image id="image0_1145_44368" width="73" height="72" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEkAAABICAYAAAC6L9h5AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABFSURBVHgB7dBBDQAgDASwBWNIR9pwAPcjIa2EVgEAAAAAAAAAAHysu1efzXpoFFeSApICkgKSApICkgAAAAAAAAAAAB7aYsAi624pdW4AAAAASUVORK5CYII="/>
+</defs>
+</svg>

@@ -18,7 +18,7 @@ export default function SplashPage1() {
                 <h1 className="text-3xl font-bold">Welcome to My App!</h1>
 
                 <button
-                    onClick={() => router.push("/home")}
+                    onClick={() => router.push("/scan")}
                     className="mt-4 px-4 py-2 bg-gray-700 text-white rounded bg-[#fdb623]"
                 >
                     Next

@@ -1,39 +1,65 @@
-// app/splashscreen/1/page.tsx
-"use client";
-
-import {useRouter} from "next/navigation";
-import Scanner from "@/public/svg/scanner.svg"
-import Bg from "@/public/svg/bg-blur.svg"
-import Image from "next/image";
+'use client'
+import {useQRCode} from 'next-qrcode';
 import BottomMenu from "@/components/BottomMenu";
+import {useSearchParams} from 'next/navigation';
+import {useEffect} from "react";
 
-export default function Home() {
-    const router = useRouter();
+export default function GenQr() {
+    const {Canvas} = useQRCode();
+    const searchParams = useSearchParams();
+    const getDataFromQRCode = (qr: string, field: string): string => {
+        const content = sliceContent(qr)
+        const fields = field.split(".")
+        const subField = fields.length > 1 ? fields.slice(1).join(".") : null
+        if (content.id === fields[0] && !subField) {
+            return content.value
+        }
+        if (content.id === fields[0] && subField) {
+            return getDataFromQRCode(content.value, subField)
+        }
+        return getDataFromQRCode(content.nextValue, fields.join("."))
+    }
+    const sliceContent = (content: string) => {
+        const id = content.slice(0, 2)
+        const length = Number(content.slice(2, 4))
+        const value = content.slice(4, 4 + length)
+        const nextValue = content.slice(4 + length)
+        return {id, length, value, nextValue}
+    }
+    const text = searchParams.get('text');
 
+    useEffect(() => {
+        if(text){
+            const working = new SpeechSynthesisUtterance(`Số tiền cần thanh toán ${getDataFromQRCode(text, "54")} đồng`);
+            working.lang = 'vi-VN';
+            window.speechSynthesis.speak(working)
+        }
+        return () => {
+            window.speechSynthesis.cancel();
+
+        };
+    }, [searchParams]);
     return (
-        <div className="flex flex-col items-center justify-center w-full h-screen  text-white bg-[#ffffff] gap-4"
-            style={{backgroundImage: 'url("/img/home.jpg")',
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center center',}}
-        >
-            <div className="w-full h-screen relative flex flex-col  justify-center items-center backdrop-blur"
-           >
-                {/*<div className="w-full h-[926px]  bg-[#333333] rounded-[30px] bg-blur "/>*/}
+        <div
+            className="grid bg-white grid-rows-[20px_1fr_20px] items-center justify-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+            <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start ">
 
-                {/*<img className="w-[428px] h-[926px] left-0 top-0 absolute" src="/img/home.png" />*/}
+                <div className="border-black border-2 rounded-lg">
+                    <Canvas
+                        text={text!}
+                        options={{
+                            errorCorrectionLevel: 'M',
+                            margin: 3,
+                            scale: 4,
+                            width: 200,
 
-                <div className="w-full h-[240px]  left-[0px] top-[0px] absolute ">
-                    <Image className="w-full h-screen left-0 top-[0px] absolute "
-                           src={Bg} alt={""}/>
-                    <Image src={Scanner} alt={""} className={" left-0 top-[0px] absolute"}  width={240} height={320}/>
-
+                        }}
+                    />
                 </div>
-            </div>
+                <BottomMenu/>
 
 
-            <BottomMenu/>
+            </main>
         </div>
-
     );
 }
