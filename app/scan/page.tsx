@@ -6,7 +6,6 @@ import scan_line from "../assets/scan/scan-line.svg"
 import ChooseFrom from "../assets/scan/choose_from.png"
 import Image from "next/image";
 import {useRouter} from "next/navigation";
-import {useEffect} from "react";
 
 export default function Scan() {
     const router = useRouter()
@@ -44,11 +43,7 @@ export default function Scan() {
 
         },
     })
-    useEffect(() => {
-        const qr = "00020101021138620010A000000727013200069704370118ATO01137005937J5T30208QRIBFTTA52045812530370454061820005802VN5912Nguyen Van A6011HO CHI MINH62290110NL12NL34NL0811 NL12NL34NL99420010A0000007270224https://atomsolution.vn/63047FDF"
-        router.push(`/home?text=${qr}`);
 
-    }, []);
 
     return (
         <div className="flex flex-col items-center justify-center w-full h-screen  text-white bg-[#ffffff] gap-4"
