@@ -1,3 +1,4 @@
+"use client"
 import QrScanIcon from "@/public/svg/qr_scan.svg"
 import QrIcon from "@/public/svg/qr.svg"
 import History from "@/public/svg/history.svg"
@@ -6,7 +7,7 @@ import Image from "next/image";
 const BottomMenu: React.FC = () => {
     return (
         <div
-            className="fixed bottom-0 w-full h-[80px] bg-[#333333] text-white flex justify-around items-center py-4 shadow-lg">
+            className="fixed bottom-0 max-w-[428px] w-full h-[80px] bg-[#333333] text-white flex justify-around items-center py-4 shadow-lg">
             {/*<!-- Generate Button -->*/}
             <div className="flex flex-col items-center">
                 <div className="text-lg">

@@ -1,17 +1,17 @@
 // app/splashscreen/1/page.tsx
 "use client";
 
-import {useRouter} from "next/navigation";
+// import {useRouter} from "next/navigation";
 import Scanner from "@/public/svg/scanner.svg"
 import Bg from "@/public/svg/bg-blur.svg"
 import Image from "next/image";
-import BottomMenu from "@/components/BottomMenu";
+// import BottomMenu from "@/components/BottomMenu";
 
 export default function Home() {
-    const router = useRouter();
+    // const router = useRouter();
 
     return (
-        <div className="flex flex-col items-center justify-center w-full h-screen  text-white bg-[#ffffff] gap-4"
+        <div className="min-w-[428px] flex flex-col items-center justify-center w-full h-screen  text-white bg-[#ffffff] gap-4"
             style={{backgroundImage: 'url("/img/home.jpg")',
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover',
@@ -26,13 +26,13 @@ export default function Home() {
                 <div className="w-full h-[240px]  left-[0px] top-[0px] absolute ">
                     <Image className="w-full h-screen left-0 top-[0px] absolute "
                            src={Bg} alt={""}/>
-                    <Image src={Scanner} alt={""} className={" left-0 top-[0px] absolute"}  width={240} height={320}/>
+                    <Image src={Scanner} alt={""} className={" left-[96px] top-[168px] absolute"}  width={240} height={320}/>
 
                 </div>
             </div>
 
 
-            <BottomMenu/>
+
         </div>
 
     );

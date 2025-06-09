@@ -1,0 +1,34 @@
+<svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 428 926"
+        width="100%"
+        height="100%"
+        preserveAspectRatio="xMidYMid meet"
+        fill="none"
+>
+    <g filter="url(#filter0_b_4_1091)">
+        <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M0 0H428V926H0V0ZM364 232H65V530H364V232Z"
+                fill="black"
+                fill-opacity="0.51"
+        />
+    </g>
+    <defs>
+        <filter
+                id="filter0_b_4_1091"
+                x="0"
+                y="0"
+                width="428"
+                height="926"
+                filterUnits="userSpaceOnUse"
+                color-interpolation-filters="sRGB"
+        >
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feGaussianBlur in="BackgroundImageFix" stdDeviation="8"/>
+            <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_4_1091"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_4_1091" result="shape"/>
+        </filter>
+    </defs>
+</svg>

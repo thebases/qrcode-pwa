@@ -1,9 +1,10 @@
 "use client"
 import localFont from "next/font/local";
 import "./globals.css";
-import {useEffect, useState} from "react";
-import Loading from "@/components/loading";
-import SplashScreen from "@/components/SplashScreen";
+// import {useEffect, useState} from "react";
+// import Loading from "@/components/loading";
+// import SplashScreen from "@/components/SplashScreen";
+import BottomMenu from "@/components/BottomMenu";
 
 const geistSans = localFont({
     src: "./fonts/GeistVF.woff",
@@ -44,9 +45,13 @@ export default function RootLayout({
             <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
         </head>
         <body
-            className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+            className={`${geistSans.variable} ${geistMono.variable} antialiased w-full h-svh flex flex-col items-center justify-center align-middle`}
         >
-        {children}
+        <div className="max-w-[428px] max-h-screen h-svh flex flex-col justify-center items-center align-middle">
+            {children}
+            <BottomMenu/>
+        </div>
+
         {/*{!isSplashComplete ? (*/}
         {/*    <SplashScreen onFinish={() => setIsSplashComplete(true)} />*/}
         {/*): (children)}*/}

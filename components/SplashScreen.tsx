@@ -1,4 +1,4 @@
-// components/SplashScreen.tsx
+"use client"
 import { useEffect, useState } from "react";
 
 const SplashScreen = ({ onFinish }: { onFinish: () => void }) => {
